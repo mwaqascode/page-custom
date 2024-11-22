@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <title>American Football Uniform</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header nav {
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .uniform-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .uniform-section .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .uniform-section .text-container {
+            max-width: 500px;
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .uniform-section .text-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .uniform-section .text-container p {
+            margin-bottom: 10px;
+        }
+
+        .uniform-section .text-container button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .uniform-section .text-container button.secondary {
+            background-color: lightgrey;
+            color: black;
+        }
+
+        .section-info {
+            background-color: #f9f9f9;
+
+        }
+
+        .technical-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            text-align: start;
+        }
+
+        .technical-info .info-box {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+        }
+
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .teamwear-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #072f3d;
+            width: 100%;
+            height: 500px;
+            color: white;
+        }
+
+        .teamwear-content h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .teamwear-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+
+
+        .jersey-display img {
+            max-width: 100%;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+
+        /* template  */
+        .section {
+            padding: 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .pre-made-templates {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .template-card {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .template-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .template-card p {
+            font-size: 1rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .slick-prev {
+            left: -50px;
+        }
+
+        .slick-next {
+            right: -50px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            content: '';
+        }
+
+        .slick-prev::after,
+        .slick-next::after {
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        .slick-prev::after {
+            content: '<';
+        }
+
+        .slick-next::after {
+            content: '>';
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+            border-color: #aaa;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 0.9rem;
+            }
+
+            .template-card p {
+                font-size: 0.9rem;
+            }
+
+            .slick-prev {
+                left: -30px;
+            }
+
+            .slick-next {
+                right: -30px;
+            }
+        }
+
+        .spacer{
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>AMERICAN FOOTBALL</h1>
+        <nav>
+            <a href="#" style="color: white;">Home</a> / <a href="#" style="color: white;">American Football Uniform</a>
+        </nav>
+    </header>
+
+    <section class="section ">
+
+        <div class="container uniform-section">
+            <div>
+                <img src="AFU-001.jpg" alt="Football Uniform" width="100px">
+
+            </div>
+            <div class="image-container ">
+                <img src="AFU-001.jpg" alt="Football Uniform">
+
+            </div>
+            <div class="text-container">
+                <h3>AMERICAN FOOTBALL UNIFORM</h3>
+                <p><img src="" alt=""><strong>Custom Embellishment Options Available</strong></p>
+                <p>We design and manufacture custom American Football Uniforms for clubs, schools, and any other
+                    association that wants their own designed uniforms.</p>
+                <button>Start an Order</button>
+                <br>
+                <button class="secondary">Size Guide</button>
+            </div>
+        </div>
+    </section>
+   <div class="spacer"></div>
+    <section class="section section-info">
+        <h2>TECHNICAL INFORMATION</h2>
+        <div class="container technical-info">
+            <div class="info-box">
+                <h3>GARMENT FEATURES</h3>
+                <p>1. Fabric: 100% Polyester</p>
+                <p>2. Super Lightweight</p>
+                <p>3. Breathable fabric keeps you dry and cool.</p>
+                <p>4. Standard fit for a relaxed easy feel.</p>
+                <p>5. Racerback cut allows a natural range of motion</p>
+
+
+            </div>
+            <div class="info-box">
+                <h3>SIZE RANGE</h3>
+                <p>
+
+                    If you like a form-fitted garment that tightly follows the contours of the body, select the size
+                    column you fall in to ensure an athletic fit.
+                    <br>
+                    <br>
+                    Youth: 6 (XS) – 14 (XL) Women: XS – 4XL
+                </p>
+            </div>
+            <div class="info-box">
+                <h3>COLOUR RANGE & EXECUTION</h3>
+                <img src="20.png" alt="">
+                <p>Through the power of sublimated printing we can print any colour, the possibilities are endless. So
+                    you can be sure your custom singlets look just they way you want.</p>
+            </div>
+        </div>
+    </section>
+    <div class="spacer"></div>
+
+    <section class="section">
+        <h2>PRE-MADE TEMPLATES</h2>
+        <p>If you like a form-fitted garment that tightly follows the contours of the body, select the size column you
+            fall in to ensure an athletic fit.</p>
+        <div class="pre-made-templates">
+            <div class="template-card">
+                <img src="AFU-001.jpg" alt="Template 1">
+                <p>AFU-001</p>
+            </div>
+            <div class="template-card">
+                <img src="AFU-001.jpg" alt="Template 2">
+                <p>AFU-002</p>
+            </div>
+            <div class="template-card">
+                <img src="AFU-001.jpg" alt="Template 3">
+                <p>AFU-003</p>
+            </div>
+            <div class="template-card">
+                <img src="AFU-001.jpg" alt="Template 4">
+                <p>AFU-004</p>
+            </div>
+        </div>
+    </section>
+    <div class="spacer"></div>
+
+    <section class="teamwear-section">
+        <div class="teamwear-content">
+            <h2>GET STARTED WITH YOUR CUSTOM MADE TEAMWEAR</h2>
+            <p>
+                Want to add your personal touch to the custom uniform shirts? Not a problem.
+                We got you covered from design to production. Help is just a click away.
+            </p>
+            <a href="#contact" class="contact-button">CONTACT US</a>
+        </div>
+        <div class="jersey-display">
+            <img src="45.png" alt="Ducks Jersey">
+        </div>
+    </section>
+    <div class="spacer"></div>
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.pre-made-templates').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>
